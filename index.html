@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Koch Ferreira</title>
+  <meta name="description" content="Personal portal of the Koch Ferreira family.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f2937'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' font-weight='700' text-anchor='middle' fill='%23f3f4f6'%3EKF%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f5f5f4;
+      --surface: #ffffff;
+      --text: #1c1917;
+      --muted: #78716c;
+      --border: #e7e5e4;
+      --accent: #1f2937;
+      --hover: #fafaf9;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #131312;
+        --surface: #1c1c1a;
+        --text: #f5f5f4;
+        --muted: #a8a29e;
+        --border: #2e2d2b;
+        --accent: #e7e5e4;
+        --hover: #232321;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 16px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main { width: 100%; max-width: 420px; }
+
+    header { text-align: center; margin-bottom: 36px; }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: .01em;
+    }
+    header p { margin: 8px 0 0; color: var(--muted); font-size: .95rem; }
+
+    nav { display: flex; flex-direction: column; gap: 12px; }
+
+    nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: inherit;
+      text-decoration: none;
+      transition: border-color .15s, background .15s, transform .15s;
+    }
+    nav a:hover, nav a:focus-visible {
+      border-color: var(--accent);
+      background: var(--hover);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    nav a:focus-visible { box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent); }
+
+    .title { display: block; font-weight: 600; font-size: 1rem; }
+    .desc { display: block; margin-top: 2px; color: var(--muted); font-size: .85rem; }
+    .arrow { color: var(--muted); font-size: 1.1rem; transition: transform .15s; }
+    nav a:hover .arrow, nav a:focus-visible .arrow { transform: translateX(3px); color: var(--accent); }
+
+    footer { margin-top: 40px; text-align: center; color: var(--muted); font-size: .8rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Koch Ferreira</h1>
+      <p>Personal portal</p>
+    </header>
+
+    <!--
+      To add a link, copy one <a> block below and edit href, title and description.
+      Replace the example.com URLs with your real subdomains.
+    -->
+    <nav aria-label="Applications">
+      <a href="https://hermes.example.com">
+        <span>
+          <span class="title">Hermes</span>
+          <span class="desc">Personal agent</span>
+        </span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a href="https://family.example.com">
+        <span>
+          <span class="title">Family</span>
+          <span class="desc">Private family data and documents</span>
+        </span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </nav>
+
+    <footer>&copy; <span id="year">2026</span> Koch Ferreira</footer>
+  </main>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
