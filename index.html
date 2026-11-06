@@ -60,7 +60,7 @@
 
     nav { display: flex; flex-direction: column; gap: 12px; }
 
-    nav a {
+    nav a, nav .card {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -80,6 +80,8 @@
       outline: none;
     }
     nav a:focus-visible { box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent); }
+
+    nav .disabled { opacity: .55; cursor: default; }
 
     .title { display: block; font-weight: 600; font-size: 1rem; }
     .desc { display: block; margin-top: 2px; color: var(--muted); font-size: .85rem; }
@@ -109,13 +111,12 @@
         <span class="arrow" aria-hidden="true">→</span>
       </a>
 
-      <a href="https://family.example.com">
+      <div class="card disabled" aria-disabled="true">
         <span>
           <span class="title">Family</span>
-          <span class="desc">Private family data and documents</span>
+          <span class="desc">Private family data and documents · coming soon</span>
         </span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
+      </div>
     </nav>
 
     <footer>&copy; <span id="year">2026</span> Koch Ferreira</footer>
